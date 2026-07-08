@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- ============================================================ -->
+<!-- CONVERSOR DE MOEDAS - PÁGINA PRINCIPAL                        -->
+<!-- ============================================================ -->
+<!-- 
+  🎯 SOBRE ESTE PROJETO:
+  Este é um conversor de moedas que desenvolvi para praticar 
+  TypeScript, consumo de APIs e design responsivo.
+  
+  💡 IDEIA:
+  Queria criar algo útil que pudesse usar no dia a dia e 
+  que mostrasse minhas habilidades como desenvolvedor.
+-->
+
+<html lang="pt-BR">
+<head>
+    <!-- ===== METADADOS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== TÍTULO ===== -->
+    <title>💱 Conversor de Moedas - Eduardo</title>
+    
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 
+      🔮 FUTURO:
+      - Adicionar favicon
+      - Meta tags para SEO
+      - Open Graph para compartilhamento
+    -->
+</head>
+
+<body>
+    <!-- ========================================================== -->
+    <!-- CONTAINER PRINCIPAL                                         -->
+    <!-- ========================================================== -->
+    <div class="container">
+        
+        <!-- ===== CABEÇALHO ===== -->
+        <!-- 
+          Coloquei um emoji de cifrão para dar um toque visual.
+          Queria que fosse algo amigável e moderno.
+        -->
+        <h1>💱 Conversor de Moedas</h1>
+        
+        <!-- ===== FORMULÁRIO ===== -->
+        <!-- 
+          🧠 O QUE APRENDI AQUI:
+          - Como estruturar um formulário acessível
+          - Labels associadas aos inputs (importante para acessibilidade)
+          - IDs únicos para manipular no JavaScript
+        -->
+        <form id="conversion-form">
+            
+            <!-- Campo: Valor -->
+            <div class="form-group">
+                <label for="amount">💰 Valor</label>
+                <input 
+                    type="number" 
+                    id="amount" 
+                    placeholder="Digite o valor" 
+                    step="0.01" 
+                    min="0" 
+                    required
+                >
+            </div>
+
+            <!-- Linha: De → Para -->
+            <div class="form-row">
+                
+                <!-- Select: Moeda de Origem -->
+                <div class="form-group">
+                    <label for="from-currency">📤 De</label>
+                    <select id="from-currency">
+                        <!-- Preenchido pelo JavaScript -->
+                    </select>
+                </div>
+                
+                <!-- Botão: Trocar Moedas -->
+                <!-- 
+                  🎯 IDEIA:
+                  Coloquei esse botão para facilitar a troca entre moedas.
+                  É um detalhe pequeno, mas faz toda diferença na experiência do usuário.
+                -->
+                <div class="swap-btn" title="Trocar moedas">↕</div>
+                
+                <!-- Select: Moeda de Destino -->
+                <div class="form-group">
+                    <label for="to-currency">📥 Para</label>
+                    <select id="to-currency">
+                        <!-- Preenchido pelo JavaScript -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Botão: Converter -->
+            <!-- 
+              🔥 APRENDIZADO:
+              Aprendi que botões com type="submit" disparam o evento de submit do formulário.
+              Isso é importante para validação e para prevenir recarregamento da página.
+            -->
+            <button type="submit">🔄 Converter</button>
+        </form>
+
+        <!-- ===== ÁREA DE RESULTADO ===== -->
+        <!-- 
+          📊 RESULTADO:
+          Aqui vou mostrar o valor convertido e a taxa de câmbio.
+          É a parte mais gratificante do projeto!
+        -->
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="result"></div>
+
+        <!-- ===== HISTÓRICO ===== -->
+        <!-- 
+          📋 HISTÓRICO:
+          Tive a ideia de salvar as conversões no localStorage.
+          Assim o usuário não perde o histórico ao recarregar a página.
+          
+          🔮 FUTURO:
+          - Adicionar botão para limpar histórico
+          - Exportar histórico em CSV
+        -->
+        <div class="history-section">
+            <h2>📋 Histórico de Conversões</h2>
+            <div id="history">
+                <p class="no-history">Nenhuma conversão realizada</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- JAVASCRIPT                                                 -->
+    <!-- ========================================================== -->
+    <!-- 
+      📦 COMO FUNCIONA:
+      O JavaScript é carregado no final da página para garantir que
+      todos os elementos HTML já estejam disponíveis.
+      
+      🧠 APRENDIZADO:
+      Aprendi que é importante carregar o JS depois do HTML
+      para evitar erros de "element not found".
+    -->
+    <script src="app.js"></script>
+</body>
+</html>

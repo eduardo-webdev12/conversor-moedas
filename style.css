@@ -1,0 +1,316 @@
+/* ================================================================ */
+/* CONVERSOR DE MOEDAS - ESTILOS                                  */
+/* ================================================================ */
+/* 
+   🎨 SOBRE O DESIGN:
+   Usei um gradiente roxo/azul porque é uma combinação moderna
+   e que transmite confiança e profissionalismo.
+   
+   💡 REFERÊNCIA:
+   Me inspirei em designs de fintechs e aplicativos de câmbio.
+*/
+
+/* ===== RESET ===== */
+/* 
+   🧠 O QUE APRENDI:
+   Resetting o CSS é importante para ter consistência
+   entre diferentes navegadores.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CORPO ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* 
+       🔮 FUTURO:
+       Adicionar um padrão de fundo sutil ou partículas animadas.
+    */
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    /* 
+       💡 IDEIA:
+       A sombra ajuda o card a "flutuar" sobre o fundo.
+       Parece que o card está levitando!
+    */
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* ===== GRUPOS DE FORMULÁRIO ===== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ===== LABELS ===== */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ===== INPUTS E SELECTS ===== */
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+/* ===== SELECTS ===== */
+select {
+    min-width: 150px;
+    cursor: pointer;
+}
+
+select option {
+    padding: 8px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* ===== FOCUS ===== */
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ===== LINHA DO FORMULÁRIO ===== */
+.form-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.form-row .form-group {
+    flex: 1 1 200px;
+    min-width: 150px;
+}
+
+/* ===== BOTÃO SWAP ===== */
+/* 
+   🎯 IDEIA:
+   Esse botão troca as moedas de lugar.
+   É um detalhe que faz o usuário economizar cliques.
+*/
+.swap-btn {
+    background: #667eea;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    user-select: none;
+    flex-shrink: 0;
+    align-self: center;
+    margin: 5px 0;
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg);
+    /* 
+       💡 APRENDIZADO:
+       Uma animação simples como essa já dá um toque profissional.
+       Pequenos detalhes fazem a diferença!
+    */
+}
+
+/* ===== BOTÃO CONVERTER ===== */
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ===== CARD DE RESULTADO ===== */
+/* 
+   🎯 RESULTADO:
+   Quando a conversão é feita, aparece um card bem bonito
+   com o valor convertido em destaque.
+*/
+.result-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    border: 2px solid #e8ebff;
+    animation: fadeIn 0.5s;
+}
+
+.result-amount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.arrow {
+    margin: 0 15px;
+    color: #667eea;
+}
+
+.result-detail {
+    text-align: center;
+    color: #666;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.result-date {
+    text-align: center;
+    color: #999;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* ===== MENSAGEM DE ERRO ===== */
+.error {
+    background: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ===== HISTÓRICO ===== */
+.history-section {
+    margin-top: 30px;
+    border-top: 2px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.history-section h2 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.history-date {
+    color: #999;
+    font-size: 12px;
+}
+
+.no-history {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================================================ */
+/* RESPONSIVIDADE                                                 */
+/* ================================================================ */
+/* 
+   📱 RESPONSIVO:
+   Aprendi que um bom projeto precisa funcionar em qualquer tela.
+   Usei media queries para ajustar em celulares e tablets.
+*/
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .form-row .form-group {
+        flex: 1;
+        min-width: 100%;
+    }
+    
+    .swap-btn {
+        align-self: center;
+        margin: 10px auto;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+    
+    .result-amount {
+        font-size: 22px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
