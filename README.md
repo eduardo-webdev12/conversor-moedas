@@ -31,12 +31,6 @@ Conversor de moedas moderno com TypeScript e JavaScript
 - 🔁 Botão de troca rápida de moedas
 - ⏱️ Última atualização em tempo real
 
-## 📸 Preview
-
-<div align="center">
-  <img src="screenshot.png" alt="Preview do Conversor de Moedas" width="600"/>
-</div>
-
 ## 🛠️ Tecnologias
 
 - **TypeScript** - Tipagem estática
